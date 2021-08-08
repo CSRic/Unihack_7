@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+<p>The ID is {{ wanted_id }}.</p>
+<article class="media content-section">
+        <p>你最害怕什么？</p>
+</article>
+<div class="article-metadata">
+    <p>Your Guess:</p>
+    <p class="article-content">{{ af2.question1 }}</p>
+</div>
+
+<div class="article-metadata">
+    <p>Your Friend's Original Answer:</p>
+    <p class="article-content">{{ af1.question1 }}</p>
+</div>
+
+<article class="media content-section">
+    <p>你如何定义成功</p>
+</article>
+<div class="article-metadata">
+<p>Your Guess:</p>
+<p class="article-content">{{ af2.question2 }}</p>
+</div>
+
+<div class="article-metadata">
+<p>Your Friend's Original Answer:</p>
+<p class="article-content">{{ af1.question2 }}</p>
+</div>
+
+<article class="media content-section">
+    <p>什么事情能够让你喜极而泣？</p>
+</article>
+<div class="article-metadata">
+<p>Your Guess:</p>
+<p class="article-content">{{ af2.question3 }}</p>
+</div>
+
+<div class="article-metadata">
+<p>Your Friend's Original Answer:</p>
+<p class="article-content">{{ af1.question3 }}</p>
+</div>
+
+<article class="media content-section">
+    <p>你如何看待特朗普？</p>
+</article>
+<div class="article-metadata">
+<p>Your Guess:</p>
+<p class="article-content">{{ af2.question4 }}</p>
+</div>
+
+<div class="article-metadata">
+<p>Your Friend's Original Answer:</p>
+<p class="article-content">{{ af1.question4 }}</p>
+</div>
+
+<article class="media content-section">
+    <p>你如何看待疫情？</p>
+</article>
+<div class="article-metadata">
+<p>Your Guess:</p>
+<p class="article-content">{{ af2.question5 }}</p>
+</div>
+
+<div class="article-metadata">
+<p>Your Friend's Original Answer:</p>
+<p class="article-content">{{ af1.question5 }}</p>
+</div>
+
+<article class="media content-section">
+    <p>你如何看待吴亦凡？</p>
+</article>
+<div class="article-metadata">
+<p>Your Guess:</p>
+<p class="article-content">{{ af2.question6 }}</p>
+</div>
+
+<div class="article-metadata">
+<p>Your Friend's Original Answer:</p>
+<p class="article-content">{{ af1.question6 }}</p>
+</div>
+
+<p>Your score is {{ score }}</p>
+{% endblock content %}

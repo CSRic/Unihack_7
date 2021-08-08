@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<p>Your answer form ID is {{ af.id }}. Tell your friend so that they can make a guess!</p>
+<article class="media content-section">
+    <div class="article-metadata">
+        <p>你最害怕什么？</p>
+        <p class="article-content">{{ af.question1 }}</p>
+    </div>
+</article>
+
+<article class="media content-section">
+    <div class="article-metadata">
+        <p>你如何定义成功</p>
+        <p class="article-content">{{ af.question2 }}</p>
+    </div>
+</article>
+
+<article class="media content-section">
+    <div class="article-metadata">
+        <p>什么事情能够让你喜极而泣？</p>
+        <p class="article-content">{{ af.question3 }}</p>
+    </div>
+</article>
+
+<article class="media content-section">
+    <div class="article-metadata">
+        <p>你如何看待特朗普？</p>
+        <p class="article-content">{{ af.question4 }}</p>
+    </div>
+</article>
+
+<article class="media content-section">
+    <div class="article-metadata">
+        <p>你如何看待疫情？</p>
+        <p class="article-content">{{ af.question5 }}</p>
+    </div>
+</article>
+
+<article class="media content-section">
+    <div class="article-metadata">
+        <p>你如何看待吴亦凡？</p>
+        <p class="article-content">{{ af.question6 }}</p>
+    </div>
+</article>
+{% endblock content %}

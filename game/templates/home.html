@@ -1,0 +1,29 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <h1><i>Want to play a game with your friends?</i></h1>
+    <div class="container"> 
+        <p>During the epidemic, did you have fewer opportunities to go out with your friends to have fun? Have you become distant because of this? Then let's play a game of tacit understanding. Test how well you know your friends, and how well they know you!</p>
+        <p>Here're the rules!</p>
+        <ol>
+            <li>Response to six random questions from our question pool. Remember to reveal your true self!</li>
+            <li>Receive your form id that your friends can later track on.</li>
+            <li>send the link to your friend and let them guess your answers.</li>
+            <li>Let your friends tell you how well they did on this game.</li>
+            <li><i>ps.If one of your friend get a relative low score, you really should get a chance to hang out together (at a safe place)!</i></li>
+        </ol>
+    </div>
+
+    <div class="container">
+        Now click a button to begin!
+    </div>
+
+    <div class="container">
+        <a href="{{ url_for('answer') }}">
+            <button class="btn btn-primary">Answer a Question Form</button>
+        </a>
+        <a href="enterid">
+            <button class="btn btn-primary">Test How Well You Know Someone</button>
+        </a>
+    </div>
+{% endblock content %}

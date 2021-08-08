@@ -13,9 +13,9 @@ created on Sat Aug 7, 2021
 #pip version 21.1.3, as default in Google Colab
 #python 3.7
 #tensorflow2 in use
-pip install -q tf-models-official==2.4.0
-!pip install tensorflow_text
-
+#Check to install the three files manually
+#tf-models-official==2.4.0
+#tensorflow_text installed
 #import relevant modules
 import os
 import numpy as np
@@ -37,11 +37,14 @@ import official.nlp.modeling.losses
 import official.nlp.modeling.models
 import official.nlp.modeling.networks
 import math
+import hashlib
+#%%
+os.environ["TFHUB_CACHE_DIR"] = 'Desktop/tfhackathon/tmp/tfhub'
 
 text_in = tf.keras.layers.Input(shape=(), dtype=tf.string)
-preprocessor = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_zh_preprocess/3")
+preprocessor = hub.KerasLayer('tmp/tfhub/46366be5166fe17634f35ea7e6f1378dcabc7165/md')
 processed = preprocessor(text_in)
-encoder = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_zh_L-12_H-768_A-12/4")
+encoder = hub.KerasLayer('tmp/tfhub/dc7ec0c6c8ed5b862891094bcbdf776b7a54dea7/md')
 outputs = encoder(processed)
 pooled_output = outputs["pooled_output"] 
 word_embeddings = tf.keras.Model(text_in, pooled_output)
@@ -62,9 +65,13 @@ def scom(s1, s2, difficulty = 10, rt_distance = False):
   score = int(100*(1-(math.tanh((distance(sentence_1.numpy()[0], sentence_2.numpy()[0])-(100 - difficulty*6))/70)))**2/2)
   if score > 100:
     score = 100
-  print('你获得了' + str(score) + '/100 分，请再接再厉')
   return score
 
-scom('橘子好吃', '好吃的橘子很难买到', 7)
-
+def main(difficulty = 3):
+    in1 = input('type your answer here: ')
+    in2 = input('type your prediction here: ')
+    sc = scom(in1, in2, difficulty)
+    return sc
 """Source: https://tfhub.dev/tensorflow/bert_zh_L-12_H-768_A-12/4"""
+
+# %%
